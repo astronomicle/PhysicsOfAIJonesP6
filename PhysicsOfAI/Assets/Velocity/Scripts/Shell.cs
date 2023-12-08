@@ -5,6 +5,7 @@ using UnityEngine;
 public class Shell : MonoBehaviour
 {
     public GameObject explosion;
+    Rigidbody rb;
     /*float mass = 10;
     float force = 1000;
     float acceleration;
@@ -25,7 +26,7 @@ public class Shell : MonoBehaviour
 
     void Start()
     {
-
+        rb = this.GetComponent<Rigidbody>();
     }
 
     void LateUpdate()
@@ -37,5 +38,6 @@ public class Shell : MonoBehaviour
         this.transform.Translate(0, speedY, speedZ);
 
         force = 0;*/
+        this.transform.forward = rb.velocity;
     }
 }

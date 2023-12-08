@@ -30,7 +30,7 @@ public class Shoot : MonoBehaviour
             GameObject shell = Instantiate(shellPrefab, shellSpawnPos.transform.position, shellSpawnPos.transform.rotation);
             shell.GetComponent<Rigidbody>().velocity = speed * this.transform.forward;
             canShoot = false;
-            Invoke("CanShootAgain", 0.5f);
+            Invoke("CanShootAgain", 0.3f);
         }
     }
 
@@ -63,7 +63,7 @@ public class Shoot : MonoBehaviour
         float y = targetDir.y;
         targetDir.y = 0f;
         float x = targetDir.magnitude;
-        float gravity = -9.81f;
+        float gravity = 9.81f;
         float sSqr = speed * speed;
         float underTheSqrRoot = (sSqr * sSqr) - gravity * (gravity * x * x + 2 * y * sSqr);
 
